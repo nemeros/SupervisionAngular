@@ -1,0 +1,12 @@
+<div id="itemDetailId" class="container">
+	<h3>{{itemSpecific.id}}</h3>
+	<span>{{itemSpecific.nom}}</span>
+	<dd>{{itemSpecific.aviability | checkmark}}</dd>
+	</dd>
+	<dd>{{ "lower cap string" | uppercase }}</dd>
+	<dd>{{ {foo: "bar", baz: 23} | json }}</dd>
+	<dd>{{ 1304375948024 | date }}</dd>
+	<dd>{{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}</dd>
+	<input ng-model="userInput"> Uppercased: {{ userInput | uppercase }}
+	<button class="button" ng-click="hello(userInput)">Hello</button>
+</div>

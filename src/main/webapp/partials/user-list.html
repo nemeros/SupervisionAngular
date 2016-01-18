@@ -1,0 +1,45 @@
+<div class="container">
+	<form>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon"><i class="glyphicon glyphicon-pushpin" aria-hidden="true"></i></div>
+				<input type="text" class="form-control" placeholder="Search By name" ng-model="search.name">
+			</div>	
+		</div>
+		
+		<div class="container">
+			<h4>Filtre par Job</h4>
+			<select ng-model="search.jobTitle">
+				<option value="">----Choose Job----</option>
+				<option ng-repeat="job in jobs" value="{{job.id}}">{{job.nom}}</option>
+			</select>		
+		</div>
+
+		<table class="table table-striped" ng-cloak>
+			<thead>
+				<tr>
+					<th class="col-md-2">
+						<a href="" ng-click="sortType = 'nom'; isReserse = !isReserse">nom</a>
+						<span ng-show="sortType == 'nom' && isReserse" class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true" ng-cloak></span>
+						<span ng-show="sortType == 'nom' && !isReserse" class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true" ng-cloak></span>
+					</th>
+					<th class="col-md-2">
+						<a href="" ng-click="sortType = 'jobId'; isReserse = !isReserse">job</a>
+						<span ng-show="sortType == 'jobId' && isReserse" class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>
+						<span ng-show="sortType == 'jobId' && !isReserse" class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in users | filter:{nom: search.name, jobId: search.jobTitle} | orderBy:sortType:isReserse">
+					<td ng-click="detailModal(user.id)">
+						{{user.nom}}
+					</td>
+					<td>{{jobs[user.jobId].nom}}</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+	</form>
+</div>

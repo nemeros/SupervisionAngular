@@ -1,0 +1,45 @@
+<div class="container" data-ng-cloak>
+	<form name="medForm"  novalidate>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Liste Mediation
+			</div>
+			<div class="panel-body">
+				<div class="input-group">
+				  <span class="input-group-addon" id="basic-addon"><span class="glyphicon glyphicon-search"></span></span>
+				  <input type="text" data-ng-model="searchText" class="form-control" placeholder="Text &agrave; filtrer" aria-describedby="basic-addon">
+				</div>
+				<div class="input-group" style="margin-bottom:1em;margin-top:2em">
+				  <span class="input-group-addon" id="basic-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+				  <input type="date" name="inputDateId" placeholder="Format de date : yyyy-mm-dd" data-ng-model="inputDate" class="form-control" aria-describedby="basic-calendar">
+				  <span class="form-control label-warning ngHide" data-ng-show="!medForm.inputDateId.$valid" data-ng-cloak>La date est mal format&eacute;e</span>
+				</div>
+	
+				<button class="btn btn-primary" type="submit" data-ng-click="refreshTable()">Recherche</button>
+			</div>
+			<table data-st-table="displayedCollection" data-st-safe-src="rowCollection" class="table table-striped" data-ng-cloak>
+				<thead>
+					<tr>
+						<th data-st-sort="fluxDesc">Flux Fct</th>
+						<th data-st-sort="medName">M&eacute;diation</th>
+						<th>Count ok</th>
+						<th>Count Enc</th>
+						<th>Count Ko</th>
+						<th>Count Tot</th>
+					</tr>
+					<tr>
+						<th colspan="6"><input data-st-search class="form-control" placeholder="Recherche..." type="text"/></th>
+					</tr>
+				</thead>
+					<tr data-ng-repeat="row in displayedCollection">
+						<td>{{row.fluxDesc}}</td>
+						<td>{{row.medName}}</td>
+						<td>{{row.cnt_ok}}</td>
+						<td>{{row.cnt_enc}}</td>
+						<td>{{row.cnt_ko}}</td>
+						<td>{{row.cnt}}</td>
+					</tr>		
+			</table>
+		</div>	
+	</form>
+</div>

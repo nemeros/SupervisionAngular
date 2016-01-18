@@ -1,0 +1,18 @@
+<div class="jumbotron">
+	<div class="container-fluid">
+		<h3 class="page-header">Liste</h3>
+		<div class="row">
+			<div class="col-md-2 item-list" ng-repeat="item in items | filter:query | orderBy:orderProp">
+				<a href="#/items/{{item.id}}">{{item.nom}}</a>				
+			</div>				
+		</div>
+	</div>			
+</div>
+	
+<div class="container">
+	Search input : <input ng-model="query"/>
+	Order : <select ng-model="orderProp">
+		<option value="nom">nom Asc</option>
+		<option value="-nom">nom Desc</option>			
+	</select>
+</div>

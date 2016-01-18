@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<!-- header code -->
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="resources/static/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="resources/static/bootstrap/theme.css">
+    <link rel="stylesheet" href="resources/static/ngTable/ng-table.min.css"/>
+    <link rel="stylesheet" href="resources/css/app.css"/>
+    
+    <title>Supervision</title>
+    
+    <script type="text/javascript" src="resources/static/jquery/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="resources/static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular.min.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-resource.min.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-mocks.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-route.min.js"></script>
+	<script type="text/javascript" src="resources/static/angular/angular-animate.min.js"></script>
+		<script type="text/javascript" src="resources/static/ngTable/ng-table.min.js"></script>
+	<script type="text/javascript" src="resources/static/smartTable/smart-table.min.js"></script>
+	<script type="text/javascript" src="resources/js/app.js"></script>
+	<script type="text/javascript" src="resources/js/service.js"></script>
+	<script type="text/javascript" src="resources/js/controller.js"></script>
+	<script type="text/javascript" src="resources/js/filters.js"></script>
+	<script type="text/javascript" src="resources/js/animations.js"></script>
+
+ 
+</head>
+<body role="document">
+
+
+	<nav class="nav navbar-inverse navbar-fixed-top">
+		<div id="menuListId" class="container">
+			<div class="navbar-header">
+				<a href="/" ><p class="navbar-brand">Supervision</p></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stats <span class="caret"></span></a>
+						 <ul class="dropdown-menu">
+						 	<li><a href="#/Sup-smart">smartTable</a></li>
+						 	<li><a href="#/Sup-med">ngTable</a></li>
+						 	<li><a href="#/test-ngTable">test NgTable</a></li>
+						 </ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container" role="main" style="margin-top:80px">	
+		<div class="view-container">
+			<div data-ng-view class="view-frame"></div>
+		</div>
+	</div>
+	
+
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div class="modal-header">
+	<h2>D&eacute;tail Utilisateurs</h2>
+</div>
+<form name="userDetailForm" novalidate>
+<div class="modal-body" ng-cloak>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon">Nom</span>
+		<input type="text" class="form-control" ng-model="userDetail.nom" name= "nom" required aria-describedby="basic-addon"/>
+		<span class="form-control display:none" data-ng-show="userDetailForm.nom.$error.required">Le nom est obligatoire</span>
+	</div>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon2">Prenom</span>
+		<input type="text" class="form-control" required aria-describedby="basic-addon2"  ng-model="userDetail.prenom"/>
+	</div>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon3">Age</span>
+		<input type="text" class="form-control" required aria-describedby="basic-addon3" ng-model="userDetail.age"/>
+	</div>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon4">Job</span>
+		<select ng-model="userDetail.jobId" 
+			ng-options="job.id as job.nom for job in jobs"  class="form-control" aria-describedby="basic-addon4" required>
+		</select>
+	</div>
+	<div class="input-group">
+		Validite de la form : {{userDetailForm.$valid}}
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="checkModal(userDetailForm.$valid)">Confirmer</button>
+	<button class="btn" ng-click="cancel()" >Annuler</button>
+</div>
+</form>

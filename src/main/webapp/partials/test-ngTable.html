@@ -1,0 +1,19 @@
+<div class="container" data-ng-cloak>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Liste Mediation
+		</div>
+		<div class="panel-body">
+			<table data-ng-table="medTable" class="table table-striped" data-show-filter="true">
+					<tr data-ng-repeat="row in $data">
+						<td title="'Flux Fct'" data-filter="{fluxDesc: 'text'}" data-sortable="'fluxDesc'">{{row.fluxDesc}}</td>
+						<td title="'M&eacute;diation'" data-filter="{medName: 'text'}" data-sortable="'medName'">{{row.medName}}</td>
+						<td title="'Count Ok'">{{row.cnt_ok}}</td>
+						<td title="'Count Enc'">{{row.cnt_enc}}</td>
+						<td title="'Count Ko'">{{row.cnt_ko}}</td>
+						<td title="'Count Tot'">{{row.cnt}}</td>
+					</tr>		
+			</table>
+		</div>
+	</div>
+</div>
